@@ -1,0 +1,182 @@
+# Nexst Template - Contexto y Reglas
+
+## 🎯 Contexto del Proyecto
+
+Este es un **monorepo template** para proyectos fullstack modernos que utiliza:
+
+- **Turborepo** como gestor de monorepo
+- **Next.js 15** para el frontend
+- **NestJS** para el backend
+- **Bun** como package manager principal
+- **TypeScript** en todo el proyecto
+- **ESLint + Prettier** para linting y formateo
+
+## 📁 Estructura del Proyecto
+
+```
+nexst-template/
+├── apps/
+│   ├── web/          → Frontend Next.js (puerto 3000)
+│   ├── api/          → Backend NestJS (puerto 3001)
+│   └── docs/         → Documentación Next.js (puerto 3002)
+├── packages/
+│   ├── ui/           → Componentes UI compartidos
+│   ├── eslint-config/→ Configuración ESLint compartida
+│   └── typescript-config/ → Configuración TypeScript compartida
+```
+
+## 🛠️ Reglas de Desarrollo
+
+### 1. **Package Managers**
+- Usar **Bun** para el frontend y packages compartidos
+- Usar **npm** para el backend (NestJS) por compatibilidad
+- Mantener `bun.lock` y `package-lock.json` actualizados
+
+### 2. **Convenciones de Código**
+- **TypeScript estricto** en todo el proyecto
+- **ESLint** con configuración compartida desde `packages/eslint-config`
+- **Prettier** para formateo consistente
+- **Naming**: camelCase para variables/funciones, PascalCase para componentes/clases
+
+### 3. **Arquitectura**
+- **DDD (Domain Driven Design)** para el backend
+- **SOLID principles** en todo el código
+- **Componentes reutilizables** en `packages/ui`
+- **Configuraciones compartidas** en `packages/`
+
+### 4. **Scripts Principales**
+```bash
+bun run dev         # Desarrollo completo
+bun run build       # Build de producción
+bun run lint        # Linting completo
+bun run format      # Formateo con Prettier
+bun run check-types # Verificación de tipos
+```
+
+### 5. **Puertos de Desarrollo**
+- **Frontend (web)**: http://localhost:3000
+- **Backend (api)**: http://localhost:3001
+- **Documentación (docs)**: http://localhost:3002
+
+## 🎨 UI/UX Guidelines
+
+### Componentes UI
+- Usar componentes de `packages/ui` como base
+- Mantener consistencia visual en toda la aplicación
+- Seguir principios de accesibilidad (WCAG)
+- Diseño responsive por defecto
+
+### Estilos
+- **CSS Modules** para estilos específicos
+- **Tailwind CSS** para utilidades rápidas
+- **CSS Variables** para temas y colores
+- **Mobile-first** approach
+
+## 🔧 Configuración de Herramientas
+
+### TypeScript
+- Configuración base en `packages/typescript-config/base.json`
+- Configuración Next.js en `packages/typescript-config/nextjs.json`
+- Configuración React en `packages/typescript-config/react-library.json`
+
+### ESLint
+- Configuración base en `packages/eslint-config/base.js`
+- Configuración Next.js en `packages/eslint-config/next.js`
+- Configuración React en `packages/eslint-config/react-internal.js`
+
+## 🚀 Workflow de Desarrollo
+
+### 1. **Nuevas Features**
+- Crear rama desde `main`
+- Desarrollar en apps específicas
+- Actualizar packages compartidos si es necesario
+- Testing local antes de PR
+
+### 2. **Packages Compartidos**
+- Modificar en `packages/`
+- Actualizar versiones en `package.json`
+- Rebuild con `bun run build`
+- Verificar que funcione en todas las apps
+
+### 3. **Deployment**
+- Build de producción: `bun run build`
+- Verificar tipos: `bun run check-types`
+- Linting: `bun run lint`
+- Testing (cuando se implemente)
+
+## 📝 Documentación
+
+### Mantener Actualizado
+- **README.md** con instrucciones claras
+- **Documentación técnica** en `apps/docs`
+- **Comentarios en código** para lógica compleja
+- **Changelog** para versiones importantes
+
+### Estándares de Documentación
+- Usar **Markdown** para toda la documentación
+- Incluir **ejemplos de código** prácticos
+- Mantener **diagramas** actualizados
+- Documentar **APIs** con ejemplos
+
+## 🔒 Seguridad y Best Practices
+
+### Backend (NestJS)
+- **Validación de datos** con class-validator
+- **Autenticación** robusta
+- **Rate limiting** para APIs
+- **CORS** configurado correctamente
+- **Environment variables** para secrets
+
+### Frontend (Next.js)
+- **SSR/SSG** cuando sea apropiado
+- **Image optimization** con next/image
+- **SEO** optimizado
+- **Performance** monitoring
+- **Error boundaries** implementados
+
+## 🧪 Testing (Futuro)
+
+### Estrategia de Testing
+- **Unit tests** con Jest
+- **Integration tests** para APIs
+- **E2E tests** con Playwright
+- **Component testing** con Testing Library
+
+### Cobertura Objetivo
+- **Backend**: 80%+ cobertura
+- **Frontend**: 70%+ cobertura
+- **Critical paths**: 100% cobertura
+
+## 📊 Monitoreo y Performance
+
+### Métricas a Seguir
+- **Bundle size** optimizado
+- **Lighthouse scores** altos
+- **API response times** < 200ms
+- **Core Web Vitals** en verde
+
+### Herramientas de Monitoreo
+- **Vercel Analytics** para frontend
+- **Application monitoring** para backend
+- **Error tracking** con Sentry
+- **Performance monitoring** con New Relic
+
+## 🎯 Objetivos del Proyecto
+
+### Corto Plazo
+- ✅ Template funcional
+- ✅ Configuración básica
+- ✅ Scripts de desarrollo
+- 🔄 Documentación completa
+- 🔄 Testing setup
+
+### Largo Plazo
+- 🎯 CI/CD pipeline
+- 🎯 Deployment automatizado
+- 🎯 Monitoring completo
+- 🎯 Performance optimization
+- 🎯 Security hardening
+
+---
+
+**Nota**: Este archivo debe mantenerse actualizado conforme evolucione el proyecto. Las reglas y contexto aquí definidos son la guía principal para el desarrollo del Nexst Template. 
