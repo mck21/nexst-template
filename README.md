@@ -1,13 +1,16 @@
 # 🧪 Nexst Monorepo Template
 
-Una plantilla moderna para proyectos **fullstack** usando monorepo con **Turborepo**, **Next.js 15.4.5** en el frontend y **NestJS 11.1.5** en el backend. Usa **Bun** como package manager principal para desarrollo y **npm** para el backend si se desea mantener compatibilidad.
+<p align="center">  
+  <img src="https://github.com/mck21/nexst-template/blob/main/public/images/nexst-header.png" />
+</p>
+
 
 ---
 
 ## 🛠️ Tech Stack
 
 [![Next.js](https://img.shields.io/badge/Next.js-15-black?logo=next.js&style=flat-square)](https://nextjs.org)
-[![NestJS](https://img.shields.io/badge/NestJS-9E1C1C?logo=nestjs&logoColor=white&style=flat-square)](https://nestjs.com)
+[![NestJS](https://img.shields.io/badge/NestJS-E0234E?logo=nestjs&logoColor=white&style=flat-square)](https://nestjs.com)
 [![Bun](https://img.shields.io/badge/Bun-1.2.4-ffde57?logo=bun&logoColor=black&style=flat-square)](https://bun.sh)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.8-blue?logo=typescript&style=flat-square)](https://www.typescriptlang.org)
 [![Turborepo](https://img.shields.io/badge/Turborepo-monorepo-5c5cff?logo=vercel&style=flat-square)](https://turbo.build)
